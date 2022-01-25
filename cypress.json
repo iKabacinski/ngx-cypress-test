@@ -1,0 +1,9 @@
+{
+    "baseUrl": "https://localhost:4200",
+    "ignoreTestFiles": [
+        "**/examples/1-getting-started/*.spec.js",
+        "**/examples/2-advanced-examples/*.spec.js"
+    ],
+    "viewportHeight": 768,
+    "viewportWidth": 1024
+}
