@@ -42,6 +42,29 @@ describe('Our first suite', () => {
 
     })
 
+    it.only('Second test', () => {
+        
+        cy.visit('/');
+        cy.contains('Forms').click();
+        cy.contains('Form Layout').click();
+      
+        cy.get('[data-cy="signInButton"]').click();
+
+        cy.contains('Sign in').click();
+
+        cy.contains('[status="warning"]','Sign in');
+
+        cy.get('#inputEmail3')
+            .parents('form')
+            .find('button')
+            .should('contain','Sign in')
+            .parents('form')
+            .find('nb-checkbox')
+            .click();
+
+        cy.contains('nb-card','Horizontal form').find('[type="email"]');
+    })
+
 
 
 })
