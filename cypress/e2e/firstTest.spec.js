@@ -1,5 +1,7 @@
 /// <reference types="cypress"/>
 
+const { Input } = require("@angular/core");
+
 describe('Our first suite', () => {
 
     beforeEach(() => {
@@ -67,8 +69,10 @@ describe('Our first suite', () => {
         cy.contains('nb-card','Horizontal form').find('[type="email"]');
     })
 
-    it.only('then and wrap methods', () => {
-
+    it('then and wrap methods', () => {
+        
+        
+        
         // cy.contains('nb-card', 'Using the Grid').find('[for="inputEmail1"]').should('contain','Email');
         // cy.contains('nb-card', 'Using the Grid').find('[for="inputPassword2"]').should('contain','Password');
 
@@ -98,7 +102,43 @@ describe('Our first suite', () => {
 
             })
         })
+    })
 
+    // https://docs.cypress.io/api/commands/invoke#Function-with-Arguments
+    it('invoke commend', () =>{
+        
+        //1
+        cy.get('[for="exampleInputEmail1"]').should('contain','Email address');
+
+        //2 saving all result of cy.get
+        cy.get('[for="exampleInputEmail1"]').then( label =>{
+            expect(label.text()).to.equal('Email address');
+        });
+
+        //3 saving text from cy.get by using cy.invoke('text')
+        cy.get('[for="exampleInputEmail1"]').invoke('text').then(text =>{
+            expect(text).to.equal('Email address');
+        });
+
+        cy.contains('nb-card','Basic form')
+            .find('nb-checkbox').click()
+            .find('.custom-checkbox').invoke('attr','class')
+            //.should('contain','checked'); //also working
+            .then(classValue => {
+                expect(classValue).to.contain('checked');
+            } )
+    })
+
+    it.only('assert property', ()=>{
+
+        cy.contains('Datepicker').click();
+
+        cy.contains('nb-card', 'Common Datepicker')
+            .find('input').then(input =>{
+                cy.wrap(input).click();
+                cy.get('nb-calendar-day-picker').contains('17').click();
+                cy.wrap(input).invoke('prop','value').should('contain','17');
+            })
     })
 
 })
