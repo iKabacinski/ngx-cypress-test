@@ -129,7 +129,7 @@ describe('Our first suite', () => {
             } )
     })
 
-    it.only('assert property', ()=>{
+    it('assert property', ()=>{
 
         cy.contains('Datepicker').click();
 
@@ -139,6 +139,43 @@ describe('Our first suite', () => {
                 cy.get('nb-calendar-day-picker').contains('17').click();
                 cy.wrap(input).invoke('prop','value').should('contain','17');
             })
+    })
+
+    it('radio button handling',()=>{
+        cy.contains('nb-card','Using the Grid').find('[type="radio"]')
+            .then(radioButtons =>{
+                cy.wrap(radioButtons)
+                    .first()
+                    .check({force:true}).should('be.checked');
+
+                cy.wrap(radioButtons)
+                    .eq(1)
+                    .check({force:true});
+                
+                cy.wrap(radioButtons)
+                    .first()
+                    .should('not.be.checked');
+
+                cy.wrap(radioButtons)
+                    .eq(2)
+                    .should('be.disabled');
+                
+                })
+    })
+
+    it.only('checkboxes handling',()=>{
+        cy.contains('Modal & Overlays').click();
+        cy.contains('Toastr').click();
+
+        cy.get('[type="checkbox"]').check({force:true});
+        //check command only check checkboxes that are unchecked, if checkbox is already checked, check() will not "ucheck" alredy checked checkbox, it remains that checkbox checked
+        // to uncheck use click() command :P  
+
+        cy.get('[type="checkbox"]').eq(0).click({force:true});
+        cy.get('[type="checkbox"]').eq(0).check({force:true});
+        
+
+
     })
 
 })
