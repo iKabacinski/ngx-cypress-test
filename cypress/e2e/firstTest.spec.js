@@ -129,41 +129,16 @@ describe('Our first suite', () => {
             } )
     })
 
-    it.only('assert property and Datepickers handling', ()=>{
+    it('assert property', ()=>{
 
         cy.contains('Datepicker').click();
 
-        let date = new Date();
-        date.setDate(date.getDate()+ 4);
-        let futureDate = date.getDate();
-        console.log(futureDate);
-        let futureMonth = date.toLocaleString('default' , {month:'short' });
-        cy.contains('nb-card', 'Common Datepicker').find('input').then(input =>{
+        cy.contains('nb-card', 'Common Datepicker')
+            .find('input').then(input =>{
                 cy.wrap(input).click();
-                
-                //TODO 
-                function selectFromCurrent(){
-
-                    
-                }
-                //below code doesnt work properly :(
-                cy.get('nb-calendar-navigation').invoke('attr','ng-reflect-date').then(dateAttribute => {
-                    if(dateAttribute.includes(futureMonth)){
-                        cy.get('[data-name="chevron-right"]').click()
-                        cy.get('nb-calendar-day-picker [class="day-cell ng-star-inserted"]').contains(futureDate).click();
-                    } else {
-                        cy.get('nb-calendar-day-picker [class="day-cell ng-star-inserted"]').contains(futureDate).click();
-                }
+                cy.get('nb-calendar-day-picker').contains('17').click();
+                cy.wrap(input).invoke('prop','value').should('contain','17');
             })
-        })
-
-        //static version
-        // cy.contains('nb-card', 'Common Datepicker')
-        //     .find('input').then(input =>{
-        //         cy.wrap(input).click();
-        //         cy.get('nb-calendar-day-picker').contains('17').click();
-        //         cy.wrap(input).invoke('prop','value').should('contain','17');
-        //     })
     })
 
     it('radio button handling',()=>{
@@ -236,7 +211,7 @@ describe('Our first suite', () => {
 
     })
 
-    it('Web tables', ()=>{
+    it.only('Web tables', ()=>{
         cy.contains('Tables & Data').click();
         cy.contains('Smart Table').click();
 
