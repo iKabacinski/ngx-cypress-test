@@ -41,7 +41,7 @@ describe('Stepper form test', () => {
         });
     });
 
-    it('Should finish second stepper', () => {
+    it.only('Should finish second stepper', () => {
         cy.get('nb-stepper[orientation="vertical"]').within(() => {
 
             cy.get('.header').find('div.step').first().should('have.class', 'selected');
@@ -50,14 +50,14 @@ describe('Stepper form test', () => {
                 .find('h3').should('have.text', 'Step content #1');
 
             cy.contains('button', 'prev').should('be.disabled');
-            cy.navigateToNextStepAndVerifyContent('Step content #2',contents.secondStepper.stepperContent[1]);
+            cy.navigateToNextStepAndVerifyContent('Step content #2',contents.secondStepper.firstParagraph[1]);
            
             cy.contains('button', 'prev').should('be.enabled');
-            cy.navigateToNextStepAndVerifyContent('Step content #3',contents.secondStepper.stepperContent[2]);
-            //TODO add second paragraph verification
+            cy.navigateToNextStepAndVerifyContent('Step content #3',contents.secondStepper.firstParagraph[2], contents.secondStepper.secondParagraph[0]);
 
             cy.contains('button', 'prev').should('be.enabled');
-            cy.navigateToNextStepAndVerifyContent('Step content #4',contents.secondStepper.stepperContent[3]);
+            cy.navigateToNextStepAndVerifyContent('Step content #4',contents.secondStepper.firstParagraph[3]);
+            cy.contains('button', 'next').should('be.disabled');
 
         });
     });
