@@ -3,38 +3,38 @@
     <nb-card>
       <nb-card-header>Toggle Accordion By Button</nb-card-header>
       <nb-card-body>
-        <button nbButton (click)="toggle()">Toggle First Item</button>
+        <button nbButton (click)="toggle()" data-cy="toggle-item-button">Toggle First Item</button>
       </nb-card-body>
     </nb-card>
 
-    <nb-accordion>
-      <nb-accordion-item #item>
-        <nb-accordion-item-header>
+    <nb-accordion data-cy="first-accordion">
+      <nb-accordion-item #item data-cy="product-details">
+        <nb-accordion-item-header data-cy="header">
           Product Details
         </nb-accordion-item-header>
-        <nb-accordion-item-body>
+        <nb-accordion-item-body data-cy="content">
           A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
           Originally, nebula was a name for any diffuse astronomical object,
           including galaxies beyond the Milky Way.
         </nb-accordion-item-body>
       </nb-accordion-item>
 
-      <nb-accordion-item>
-        <nb-accordion-item-header>
+      <nb-accordion-item data-cy="reviews"> 
+        <nb-accordion-item-header data-cy="header">
           Reviews
         </nb-accordion-item-header>
-        <nb-accordion-item-body>
+        <nb-accordion-item-body data-cy="content">
           A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
           Originally, nebula was a name for any diffuse astronomical object,
           including galaxies beyond the Milky Way.
         </nb-accordion-item-body>
       </nb-accordion-item>
 
-      <nb-accordion-item>
-        <nb-accordion-item-header>
+      <nb-accordion-item data-cy="edit">
+        <nb-accordion-item-header data-cy="header">
           Edit
         </nb-accordion-item-header>
-        <nb-accordion-item-body>
+        <nb-accordion-item-body data-cy="content">
           A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
           Originally, nebula was a name for any diffuse astronomical object,
           including galaxies beyond the Milky Way.
@@ -44,12 +44,12 @@
   </div>
 
   <div class="accordion-container col-md-12 col-lg-6 col-xxxl-6">
-    <nb-accordion multi>
-      <nb-accordion-item>
-        <nb-accordion-item-header>
+    <nb-accordion multi data-cy="second-accordion">
+      <nb-accordion-item data-cy="product-details">
+        <nb-accordion-item-header data-cy="header">
           Product Details
         </nb-accordion-item-header>
-        <nb-accordion-item-body>
+        <nb-accordion-item-body data-cy="content">
           A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
           Originally, nebula was a name for any diffuse astronomical object,
           including galaxies beyond the Milky Way.
@@ -57,21 +57,21 @@
       </nb-accordion-item>
 
       <nb-accordion-item>
-        <nb-accordion-item-header>
+        <nb-accordion-item-header data-cy="reviews">
           Reviews
         </nb-accordion-item-header>
-        <nb-accordion-item-body>
+        <nb-accordion-item-body data-cy="content">
           A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
           Originally, nebula was a name for any diffuse astronomical object,
           including galaxies beyond the Milky Way.
         </nb-accordion-item-body>
       </nb-accordion-item>
 
-      <nb-accordion-item>
-        <nb-accordion-item-header>
+      <nb-accordion-item data-cy="edit">
+        <nb-accordion-item-header data-cy="header">
           Edit
         </nb-accordion-item-header>
-        <nb-accordion-item-body>
+        <nb-accordion-item-body data-cy="content">
           A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
           Originally, nebula was a name for any diffuse astronomical object,
           including galaxies beyond the Milky Way.
