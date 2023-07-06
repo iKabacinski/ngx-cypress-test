@@ -19,7 +19,7 @@ describe('Accordions tests', () => {
             });
         });
 
-        it.only('Should only one accoordion to be expanded', () => {
+        it('Should only one accoordion to be expanded', () => {
             cy.getByDataCy('first-accordion').within(()=>{
                 cy.getByDataCy('product-details').findByDataCy('header').click();
 
