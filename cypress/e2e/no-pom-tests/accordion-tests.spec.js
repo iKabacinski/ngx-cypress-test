@@ -3,14 +3,13 @@
 describe('Accordions tests', () => {
 
     beforeEach(() => {
-
         cy.visit('/');
         cy.selectFormFromMenu('Layout', 'Accordion');
     });
 
-    describe('First accotdion tests', () => {
+    describe('First accordion tests', () => {
 
-        it('Should expand Product details', () => {
+        it('Should expand Product details after clicking button', () => {
             cy.getByDataCy('toggle-item-button').should('exist').click().then(() => {
                 cy.getByDataCy('first-accordion').within(() => {
                     cy.getByDataCy('product-details')
@@ -20,14 +19,20 @@ describe('Accordions tests', () => {
         });
 
         it('Should only one accoordion to be expanded', () => {
-            cy.getByDataCy('first-accordion').within(()=>{
-                cy.getByDataCy('product-details').findByDataCy('header').click();
-
-                cy.getByDataCy('reviews').findByDataCy('header').click().then(()=>{
-                    cy.getByDataCy('product-details').should('have.class','collapsed');
-                });
+            cy.getByDataCy('first-accordion').within(() => {
+                cy.clickItemAndVerifyIfOtherAreCollapsed('reviews');
+                cy.clickItemAndVerifyIfOtherAreCollapsed('product-details');
+                cy.clickItemAndVerifyIfOtherAreCollapsed('edit');
+                cy.clickItemAndVerifyIfOtherAreCollapsed('reviews');
             });
         });
     });
 
+    describe('Second accordion tests', () => {
+
+        it('All items expanded and the closed', () => {
+            cy.openAllItemInOneAccordion('second-accordion');
+            cy.closeAllItemInOneAccordion('second-accordion');
+        });
+    });
 });
