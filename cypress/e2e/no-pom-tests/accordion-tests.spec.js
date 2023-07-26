@@ -18,7 +18,7 @@ describe('Accordions tests', () => {
       });
     });
 
-    it('Should only one accoordion to be expanded', () => {
+    it('Should only one accoordion to be expanded', () => { //TODO przenieść dane testowe do jsona
       cy.getByDataCy('first-accordion').within(() => {
         cy.clickItemAndVerifyIfOtherAreCollapsed('reviews');
         cy.clickItemAndVerifyIfOtherAreCollapsed('product-details');
@@ -30,7 +30,7 @@ describe('Accordions tests', () => {
 
   describe('Second accordion tests', () => {
 
-    it('All items expanded and the closed', () => {
+    it('All items expanded and the closed', () => { ////TODO przenieść dane testowe do jsona
       cy.openAllItemInOneAccordion('second-accordion');
       cy.closeAllItemInOneAccordion('second-accordion');
     });
