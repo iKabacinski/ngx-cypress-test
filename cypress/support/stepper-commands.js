@@ -13,5 +13,5 @@ Cypress.Commands.add('navigateToNextStep', () => {
 
 Cypress.Commands.add('verifyTitle', (title) => {
     cy.get('.step-content')
-        .find('h3').should('have.text', title);
+        .find('h3').should('have.text', 'fails');
 });
