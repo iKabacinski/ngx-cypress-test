@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - master
+      - gh-actions
   pull_request:
     branches:
       - master
-
 jobs:
   build:
 
@@ -24,7 +24,7 @@ jobs:
       run: npm start &
 
     - name: Wait for application to start
-      run: sleep 10s
+      run: sleep 20s
 
     - name: Run Cypress tests
       run: npx cypress run
