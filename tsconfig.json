@@ -13,6 +13,9 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "lib": [
       "es2017",
       "dom"
