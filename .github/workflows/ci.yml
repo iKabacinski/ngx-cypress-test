@@ -28,7 +28,7 @@ jobs:
       run: sleep 20s
 
     - name: Cypress run
-      uses: cypress-io/github-action@v5.1
+      uses: cypress-io/github-action@v5.1.0
       with:
         record: true
         # Cancel the run after 2 failed tests
