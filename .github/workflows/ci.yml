@@ -30,6 +30,7 @@ jobs:
     - name: Cypress run
       uses: cypress-io/github-action@v5.1.0
       with:
+        install: false
         record: true
         # Cancel the run after 2 failed tests
         auto-cancel-after-failures: 2
