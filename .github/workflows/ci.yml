@@ -32,7 +32,6 @@ jobs:
       with:
         install: false
         record: true
-        config-file: cypress-config.js
         # Cancel the run after 2 failed tests
         auto-cancel-after-failures: 2
       env:
