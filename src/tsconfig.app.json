@@ -10,7 +10,10 @@
       "@nebular/*": [
         "../node_modules/@nebular/*"
       ]
-    }
+    },
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   },
   "exclude": [
     "test.ts",
