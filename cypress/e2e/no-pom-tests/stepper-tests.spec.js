@@ -29,16 +29,16 @@ describe('Stepper form test', () => {
 
       cy.contains('button', 'prev').should('be.disabled');
       cy.navigateToNextStep().then(() => {
-        cy.verifyTitle('Step content #2');
+        cy.verifyTitle('Step content #2'); //TODO przenieść dane testowe do jsona
       });
       cy.contains('button', 'prev').should('be.enabled');
       cy.navigateToNextStep().then(() => {
-        cy.verifyTitle('Step content #3');
+        cy.verifyTitle('Step content #3'); //TODO przenieść dane testowe do jsona
       });
 
       cy.contains('button', 'prev').should('be.enabled');
       cy.navigateToNextStep().then(() => {
-        cy.verifyTitle('Step content #4');
+        cy.verifyTitle('Step content #4'); //TODO przenieść dane testowe do jsona
         cy.contains('button', 'next').should('be.disabled');
       });
 
