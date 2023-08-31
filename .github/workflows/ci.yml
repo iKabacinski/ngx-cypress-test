@@ -19,17 +19,19 @@ jobs:
 
     - name: Install dependencies
       run: npm install --force
+  run application:
+    steps:
+      - name: Run npm start
+        run: npm start &
+        if: success()
 
-    - name: Run npm start
-      run: npm start &
-      if: success()
-
-    - name: Wait for application to start
-      run: sleep 20s
-
-    - name: Cypress run
-      uses: cypress-io/github-action@v5.1.0
-      with:
-        install: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Wait for application to start
+        run: sleep 20s
+  tests:
+    steps:
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.1.0
+        with:
+          install: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
