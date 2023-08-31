@@ -21,7 +21,7 @@ jobs:
         run: npm install --force
 
       - name: Run npm start
-        run: npm start
+        run: npm start &
         if: success()
 
       - name: Wait for application to start
