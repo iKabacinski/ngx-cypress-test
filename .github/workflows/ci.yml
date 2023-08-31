@@ -20,6 +20,7 @@ jobs:
     - name: Install dependencies
       run: npm install --force
   start-app:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -30,6 +31,7 @@ jobs:
       - name: Wait for application to start
         run: sleep 20s
   run-tests:
+    needs: start-app
     runs-on: ubuntu-latest
 
     steps:
