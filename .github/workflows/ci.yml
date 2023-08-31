@@ -31,6 +31,5 @@ jobs:
       uses: cypress-io/github-action@v5.1.0
       with:
         install: false
-        auto-cancel-after-failures: 2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
