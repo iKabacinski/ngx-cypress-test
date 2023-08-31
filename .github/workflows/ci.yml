@@ -8,11 +8,9 @@ on:
   pull_request:
     branches:
       - master
+    runs-on: ubuntu-latest
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
