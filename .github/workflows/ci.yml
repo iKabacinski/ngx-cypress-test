@@ -32,7 +32,6 @@ jobs:
       with:
         install: false
         record: true
-        # Cancel the run after 2 failed tests
         auto-cancel-after-failures: 2
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
