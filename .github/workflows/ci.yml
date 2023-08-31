@@ -4,27 +4,32 @@ on:
   push:
     branches:
       - master
+      - gh-actions
   pull_request:
     branches:
       - master
-
 jobs:
-  build:
+  build-start-test:
 
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: npm install --force
+      - name: Install dependencies
+        run: npm install --force
 
-    - name: Run npm start
-      run: npm start &
+      - name: Run npm start
+        run: npm start &
+        if: success()
 
-    - name: Wait for application to start
-      run: sleep 10s
+      - name: Wait for application to start
+        run: sleep 20s
 
-    - name: Run Cypress tests
-      run: npx cypress run
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.1.0
+        with:
+          install: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
