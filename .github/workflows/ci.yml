@@ -8,33 +8,37 @@ on:
   pull_request:
     branches:
       - master
+
 jobs:
-  build:
-
+  install-dependencies:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: npm install --force
+      - name: Install dependencies
+        run: npm install --force
+
   start-app:
-    needs: build
+    needs: install-dependencies
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Run npm start
-        run: npm start &
-        if: success()
+        run: npm start
 
       - name: Wait for application to start
         run: sleep 20s
+
   run-tests:
     needs: start-app
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Cypress run
         uses: cypress-io/github-action@v5.1.0
         with:
