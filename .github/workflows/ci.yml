@@ -9,35 +9,24 @@ on:
     branches:
       - master
 jobs:
-  build:
+  build-start-run-tests:
 
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: Install dependencies
       run: npm install --force
-  start-app:
-    needs: build
-    runs-on: ubuntu-latest
+    - name: Run npm start
+      run: npm start
 
-    steps:
-      - name: Run npm start
-        run: npm start &
-        if: success()
+    - name: Wait for application to start
+      run: sleep 20s
 
-      - name: Wait for application to start
-        run: sleep 20s
-  run-tests:
-    needs: start-app
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Cypress run
-        uses: cypress-io/github-action@v5.1.0
-        with:
-          install: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Cypress run
+      uses: cypress-io/github-action@v5.1.0
+      with:
+        install: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
