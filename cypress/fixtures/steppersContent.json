@@ -1,26 +1,32 @@
 {
-    "secondStepper": {
-        "inputValue": [
-            "Igor",
-            "Die Hard",
-            "Something"
-        ],
-        "content": [
-            "Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down. Nullizzle sapien vel",
-            "Pellentesque we gonna chung tortor. Sizzle pizzle. Fizzle izzle dolor dapibus fo shizzle mah nizzle fo rizzle, mah home g-dizzle tempus tempor. Maurizzle cool nibh owned turpizzle. My shizz fo shizzle tortor.",
-            "Things boom shackalack rhoncus yo. In fo shizzle my nizzle gangsta platea dictumst. Check it out pot."
-        ],
-        "successMessege": "Wizard completed!"
-    },
-    "thirdStepper": {
-        "firstParagraph": [
-            "Proin varius accumsan semper. Praesent consequat tincidunt sagittis. Curabitur egestas sem a ipsum bibendum, sit amet fringilla orci efficitur. Nam bibendum lectus ut viverra tristique. Fusce eu pulvinar magna, quis viverra ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus turpis, commodo vel placerat quis, lobortis in ligula.",
-            "Curabitur luctus mattis risus nec condimentum. Donec at dui turpis. Sed vehicula fringilla rutrum. Nullam sed ornare magna. Mauris vitae laoreet diam. Mauris fermentum ligula at lacinia semper. Nulla placerat dui eu sapien pellentesque, eu placerat leo luctus. Cras pharetra blandit fermentum.",
-            "Proin varius accumsan semper. Praesent consequat tincidunt sagittis. Curabitur egestas sem a ipsum bibendum, sit amet fringilla orci efficitur. Nam bibendum lectus ut viverra tristique. Fusce eu pulvinar magna, quis viverra ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus turpis, commodo vel placerat quis, lobortis in ligula.",
-            "Proin varius accumsan semper. Praesent consequat tincidunt sagittis. Curabitur egestas sem a ipsum bibendum, sit amet fringilla orci efficitur. Nam bibendum lectus ut viverra tristique. Fusce eu pulvinar magna, quis viverra ex."
-        ],
-        "secondParagraph": [
-            "Curabitur luctus mattis risus nec condimentum. Donec at dui turpis. Sed vehicula fringilla rutrum. Nullam sed ornare magna. Mauris vitae laoreet diam. Mauris fermentum ligula at lacinia semper. Nulla placerat dui eu sapien pellentesque, eu placerat leo luctus. Cras pharetra blandit fermentum."
-        ]
-    }
+  "stepTitle": [
+    "Step content #1",
+    "Step content #2",
+    "Step content #3",
+    "Step content #4"
+  ],
+  "secondStepper": {
+    "inputValue": [
+      "Igor",
+      "Die Hard",
+      "Something"
+    ],
+    "content": [
+      "Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down. Nullizzle sapien vel",
+      "Pellentesque we gonna chung tortor. Sizzle pizzle. Fizzle izzle dolor dapibus fo shizzle mah nizzle fo rizzle, mah home g-dizzle tempus tempor. Maurizzle cool nibh owned turpizzle. My shizz fo shizzle tortor.",
+      "Things boom shackalack rhoncus yo. In fo shizzle my nizzle gangsta platea dictumst. Check it out pot."
+    ],
+    "successMessege": "Wizard completed!"
+  },
+  "thirdStepper": {
+    "firstParagraph": [
+      "Proin varius accumsan semper. Praesent consequat tincidunt sagittis. Curabitur egestas sem a ipsum bibendum, sit amet fringilla orci efficitur. Nam bibendum lectus ut viverra tristique. Fusce eu pulvinar magna, quis viverra ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus turpis, commodo vel placerat quis, lobortis in ligula.",
+      "Curabitur luctus mattis risus nec condimentum. Donec at dui turpis. Sed vehicula fringilla rutrum. Nullam sed ornare magna. Mauris vitae laoreet diam. Mauris fermentum ligula at lacinia semper. Nulla placerat dui eu sapien pellentesque, eu placerat leo luctus. Cras pharetra blandit fermentum.",
+      "Proin varius accumsan semper. Praesent consequat tincidunt sagittis. Curabitur egestas sem a ipsum bibendum, sit amet fringilla orci efficitur. Nam bibendum lectus ut viverra tristique. Fusce eu pulvinar magna, quis viverra ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus turpis, commodo vel placerat quis, lobortis in ligula.",
+      "Proin varius accumsan semper. Praesent consequat tincidunt sagittis. Curabitur egestas sem a ipsum bibendum, sit amet fringilla orci efficitur. Nam bibendum lectus ut viverra tristique. Fusce eu pulvinar magna, quis viverra ex."
+    ],
+    "secondParagraph": [
+      "Curabitur luctus mattis risus nec condimentum. Donec at dui turpis. Sed vehicula fringilla rutrum. Nullam sed ornare magna. Mauris vitae laoreet diam. Mauris fermentum ligula at lacinia semper. Nulla placerat dui eu sapien pellentesque, eu placerat leo luctus. Cras pharetra blandit fermentum."
+    ]
+  }
 }

@@ -7,10 +7,7 @@ describe('Forms test', () => {
 
 
   it('should find all forms on the  page', () => {
-    // tag: smoke
     cy.get('nb-card').should('have.length',6);
-
-
   });
 
 
